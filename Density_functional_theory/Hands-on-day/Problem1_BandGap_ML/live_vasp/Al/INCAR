@@ -1,0 +1,13 @@
+SYSTEM = Al PBE metallic reference
+ENCUT = 400
+PREC = Accurate
+EDIFF = 1E-6
+ALGO = Normal
+ISMEAR = 1
+SIGMA = 0.20
+IBRION = -1
+NSW = 0
+LREAL = .FALSE.
+NBANDS = 8
+LWAVE = .FALSE.
+LCHARG = .FALSE.

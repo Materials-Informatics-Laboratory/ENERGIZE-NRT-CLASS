@@ -1,0 +1,13 @@
+SYSTEM = Si PBE electronic gap
+ENCUT = 400
+PREC = Accurate
+EDIFF = 1E-6
+ALGO = Normal
+ISMEAR = 0
+SIGMA = 0.05
+IBRION = -1
+NSW = 0
+LREAL = .FALSE.
+NBANDS = 8
+LWAVE = .FALSE.
+LCHARG = .FALSE.
