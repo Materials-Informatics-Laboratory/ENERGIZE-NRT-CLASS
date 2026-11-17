@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash -l
 
 #$ -P me500jc
 #$ -N alcu_neb100
-#$ -pe omp 4
+#$ -pe omp 8
 #$ -l h_rt=02:00:00
 #$ -j y
 #$ -o neb_job.out
