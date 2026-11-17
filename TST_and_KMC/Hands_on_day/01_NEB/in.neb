@@ -1,0 +1,29 @@
+# Al-Cu nearest-neighbor vacancy hop: climbing-image NEB
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+atom_modify map array sort 0 0.0
+
+read_data initial.data
+
+pair_style eam/alloy
+pair_coeff * * ../potentials/al-cu-set.eam.alloy Al Cu
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+
+# Damped-dynamics minimizer required by neb
+timestep 0.01
+min_style fire
+
+# All atoms can relax.  Kspring = 1 eV/A^2 for metal units.
+fix nebfix all neb 1.0
+
+thermo 50
+thermo_style custom step pe
+thermo_modify flush yes
+
+# 8 replicas are supplied by the MPI partition command in submit.sh.
+# The last replica is read from final.coords; intermediate replicas are
+# linearly interpolated by LAMMPS.  Stage 2 is the climbing-image refinement.
+neb 0.0 0.02 2000 1000 50 final final.coords verbosity default

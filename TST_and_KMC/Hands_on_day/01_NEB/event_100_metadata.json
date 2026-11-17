@@ -1,0 +1,18 @@
+{
+  "event_id": 100,
+  "seed": 9107,
+  "jump_atom_id": 194,
+  "jump_species": "Cu",
+  "vacancy_site_grid": [
+    7,
+    0,
+    3
+  ],
+  "jump_site_grid": [
+    6,
+    0,
+    2
+  ],
+  "lattice_parameter_A": 4.032,
+  "vacancy_original_species": "Al"
+}
